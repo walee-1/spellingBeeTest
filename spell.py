@@ -8,7 +8,7 @@ import re
 # parser.add_argument('--letters',required=True,type=str,help="please put the 6 letters of the puzzle")
 # parser.add_argument('-center',required=True,type=str,help="please put the center letter")
 # args=parser.parse_args()
-# centerLetter=args.
+# centerLetter=args. ##can also do it via argument parsing instead of asking for user input
 def inputFunc(noChar):
     while True:
 
@@ -32,12 +32,11 @@ with open(filePath,'r') as f:
 
 
 
-# surroundLetter=inputFunc(6)
-# centerLetter=inputFunc(1) 
-# print(surroundLetter)
+surroundLetter=inputFunc(6)
+centerLetter=inputFunc(1) 
 
-surroundLetter='yateln' #test conditions
-centerLetter='m' #test conditions
+# surroundLetter='yateln' #test conditions
+# centerLetter='m' #test conditions
 allLetters=surroundLetter+centerLetter
 wordlist = [i for i in wordlist if len(i)>3]
 finalList=[]
