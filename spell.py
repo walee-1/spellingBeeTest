@@ -32,8 +32,27 @@ with open(filePath,'r') as f:
 
 
 
+yes_choices = ('yes', 'y','true','t')
+no_choices = ('no', 'n','false','f')
+
 surroundLetter=inputFunc(6)
-centerLetter=inputFunc(1) 
+
+while True:
+    centerLetter=inputFunc(1)
+    if centerLetter in surroundLetter:
+        print("Center letter already given in surround letter.")
+        while True:
+            dupCheck=input("If that was a mistake press Y, else N: ")
+            if dupCheck.lower() in yes_choices:
+                surroundLetter=inputFunc(6)
+                break
+            elif dupCheck.lower() in no_choices:
+                break
+            else:
+                print("Please enter Yes or No")
+    else:
+        break
+        
 
 # surroundLetter='yateln' #test conditions
 # centerLetter='m' #test conditions
