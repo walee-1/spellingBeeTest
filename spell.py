@@ -65,18 +65,17 @@ panagram=[]
 for word in wordlist:
     if centerLetter in word:      
         if re.search(regex,word):
-            if word.count(allLetters)==1:
+            if len(set(word))==len(word) and len(word)==len(allLetters):
                 perfPanagram.append(word)
             elif all([char in word for char in allLetters]):
                 panagram.append(word)
             else:
                 finalList.append(word)
-            # elif re.search(regexPerf,)
 if len(perfPanagram)>0:
     for word in perfPanagram:
-        print(f"{word} Perfect Panagram")
+        print(f"{word}"+'\033[3m'+" <---- Perfect Panagram"+'\033[0m')
 for word in panagram:
-    print(f"{word}"+'\033[3m'+" Panagram"+'\033[0m')
+    print(f"{word}"+'\033[3m'+" <---- Panagram"+'\033[0m')
 
 finalList=sorted(finalList,key=lambda s: (-len(s),s))
 for word in finalList:
